@@ -1,8 +1,8 @@
 {
-	"LambdaXXXRole": {
+	"LambdaEC2HibernationRole": {
 		"Type": "AWS::IAM::Role",
 		"Properties": {
-			"RoleName": "lambda_xxx_lambda",
+			"RoleName": "lambda_ec2_hibernation_lambda",
 			"AssumeRolePolicyDocument": {
 				"Version": "2012-10-17",
 				"Statement": [

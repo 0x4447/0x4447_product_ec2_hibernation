@@ -1,5 +1,5 @@
 {
-	"CodePipelineXXXWebhook": {
+	"CodePipelineEC2HibernationWebhook": {
 		"Type": "AWS::CodePipeline::Webhook",
 		"Properties": {
 			"Authentication": "GITHUB_HMAC",
@@ -12,9 +12,9 @@
 					"MatchEquals": "refs/heads/{Branch}"
 				}
 			],
-			"TargetPipeline": { "Ref": "CodePipelineXXX" },
+			"TargetPipeline": { "Ref": "CodePipelineEC2Hibernation" },
 			"TargetAction": "Material",
-			"TargetPipelineVersion": { "Fn::GetAtt": [ "CodePipelineXXX", "Version" ]},
+			"TargetPipelineVersion": { "Fn::GetAtt": [ "CodePipelineEC2Hibernation", "Version" ]},
 			"RegisterWithThirdParty": true
 		}
 	}

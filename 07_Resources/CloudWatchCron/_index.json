@@ -1,0 +1,17 @@
+{
+	"Cron": {
+		"Type": "AWS::Events::Rule",
+		"Properties": {
+			"Description": "Every hour execute the lambda which will hibernate or stop dorment EC2 instances.",
+			"Name": "0x4447_ec2_hibernation",
+			"ScheduleExpression": "rate(1 hour)",
+			"State": "ENABLED",
+			"Targets": [
+				{
+					"Arn": { "Fn::GetAtt": ["LambdaEC2Hibernation", "Arn"] },
+					"Id": "Lambda"
+				}
+			]
+		}
+	}
+}

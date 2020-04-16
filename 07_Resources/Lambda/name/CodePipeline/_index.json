@@ -1,14 +1,14 @@
 {
-	"CodePipelineXXX": {
+	"CodePipelineEC2Hibernation": {
 		"Type": "AWS::CodePipeline::Pipeline",
-		"DependsOn": "CodePipelineNameRole",
+		"DependsOn": "CodePipelineEC2HibernationRole",
 		"Properties": {
-			"Name": "lambda_xxx",
+			"Name": "lambda_ec2_hibernation",
 			"ArtifactStore": {
 				"Location": { "Ref": "CodePipelineArtifactsParam" },
 				"Type": "S3"
 			},
-			"RoleArn": { "Fn::GetAtt": ["CodePipelineNameRole", "Arn" ] },
+			"RoleArn": { "Fn::GetAtt": ["CodePipelineEC2HibernationRole", "Arn" ] },
 			"Stages": [
 				{
 					"Name": "Get",
@@ -23,8 +23,8 @@
 								"Version": "1"
 							},
 							"Configuration": {
-								"Owner": "Retireryte",
-								"Repo": "Rr-Lambda-Generator-Avatar",
+								"Owner": "0x4447",
+								"Repo": "0x4447_product_ec2_hibernation_lambda",
 								"Branch": { "Ref": "StageParam" },
 								"PollForSourceChanges": false,
 								"OAuthToken": { "Ref": "GitHubTokenParam" }

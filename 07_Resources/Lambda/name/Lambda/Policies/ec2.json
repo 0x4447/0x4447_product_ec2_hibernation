@@ -1,15 +1,18 @@
 {
-	"LambdaXXXPolicyS3": {
+	"LambdaEC2HibernationPolicyEC2": {
 		"Type": "AWS::IAM::Policy",
 		"Properties": {
-			"PolicyName": "s3",
-			"Roles": [ { "Ref": "LambdaXXXRole" } ],
+			"PolicyName": "ec2",
+			"Roles": [ { "Ref": "LambdaEC2HibernationRole" } ],
 			"PolicyDocument": {
 				"Version": "2012-10-17",
 				"Statement": [
 					{
 						"Effect": "Allow",
-						"Action": "*",
+						"Action": [
+							"ec2:DescribeInstances",
+							"ec2:StopInstances"
+						],
 						"Resource": "*"
 					}
 				]

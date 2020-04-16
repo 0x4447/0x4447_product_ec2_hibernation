@@ -1,0 +1,21 @@
+{
+	"LambdaEC2HibernationPolicyCloudWatch": {
+		"Type": "AWS::IAM::Policy",
+		"Properties": {
+			"PolicyName": "cloud_watch",
+			"Roles": [ { "Ref": "LambdaEC2HibernationRole" } ],
+			"PolicyDocument": {
+				"Version": "2012-10-17",
+				"Statement": [
+					{
+						"Effect": "Allow",
+						"Action": [
+							"cloudwatch:GetMetricStatistics"
+						],
+						"Resource": "*"
+					}
+				]
+			}
+		}
+	}
+}
