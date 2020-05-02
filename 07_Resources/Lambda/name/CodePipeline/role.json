@@ -2,7 +2,7 @@
 	"CodePipelineEC2HibernationRole": {
 		"Type": "AWS::IAM::Role",
 		"Properties": {
-			"RoleName": "lambda_ec2_hibernation_codepipeline",
+			"RoleName": "lambda_0x4447_ec2_hibernation_codepipeline",
 			"AssumeRolePolicyDocument": {
 				"Version": "2012-10-17",
 				"Statement": [

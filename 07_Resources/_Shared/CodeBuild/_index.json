@@ -3,7 +3,7 @@
 		"Type": "AWS::CodeBuild::Project",
 		"DependsOn": "CodeBuildRole",
 		"Properties": {
-			"Name": "ec2_hibernation_reusable",
+			"Name": "0x4447_ec2_hibernation_reusable",
 			"ServiceRole": { "Fn::GetAtt": ["CodeBuildRole", "Arn"] },
 			"TimeoutInMinutes": 60,
 			"Source": {
